@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>baseHead}}
+<body>
+    {{>siteHeader}}
+        <section class="section">
+            <div class="container">
+        <h2>สร้างห้องแล้วพร้อมตั้งคำถามได้ทันที</h2>
+        <p class="mg-bt-large">วันนี้มีอะไรอยากถามรึเปล่า... ?</p>
+        {{#each allPosts}}
+        <div class="box">
+            <h4><a href="/p/{{ this.id }}">{{ this.title }}</a></h4>
+            <p>
+                <span>{{this.from}} | </span>
+                <span class="text-gary">{{this.createdAtText}}</span>
+            </p>
+            {{#if this.commentsCount }}
+                <div>{{this.commentsCount}} คอมเม้นท์</div>
+                {{else}}
+                <div>ยังไม่มีคอมเม้นท์</div>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+            </div>
+        </section>
+    {{!-- <p>Hello World!! นี้คือสิ่งที่คุณต้องการหาใช่ไหม p={{ p }} sortBy={{ sortBy }}</p> --}}
+    {{>siteFooter}}
+    {{>siteScrollTop}}
+    {{>siteSrcpts}}
+</body>
+</html>
