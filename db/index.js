@@ -9,7 +9,6 @@ const db = knex.default({
         port: process.env.DB_PORT ,
         database: process.env.DB_NAME,
         timezone: '+00.00',
-        CA: process.env.DB_CA
     }
 });
 
